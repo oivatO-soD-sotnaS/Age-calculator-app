@@ -1,0 +1,176 @@
+
+*{
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    
+}
+:root{
+    --input-border-day: darkgrey;
+    --input-border-month: darkgrey;
+    --input-border-year: darkgrey;
+    --erro-day: "";
+    --erro-month: "";
+    --erro-year: "";
+}
+body{
+
+    background-color: #ddd;
+    width: 100vw;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
+
+}
+.card{
+    display: grid;
+    grid-template-rows: 30% 70%;
+    margin: 0 auto;
+    margin-top: 25%;
+    background-color: #fff;
+    width: 500px;
+    height: min-content;
+    padding: clamp(10px,2vw,30px);
+    border-radius: 25px;
+    border-bottom-right-radius: 30%;
+}
+.inputs{
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 100px;
+}
+
+.ux{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    /* background-color: rgb(102, 102, 9); */
+}
+
+input{   
+
+    border: 1.5px solid var(--input-border);
+    color: black;
+    border-radius: 5px;
+    width: clamp(30px,10vw,100px);
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    padding-left: clamp(5px,2rem,15px);
+    outline: none;
+
+}
+#day{
+    border: 1.5px solid var(--input-border-day);
+}
+#month{
+    border: 1.5px solid var(--input-border-month);
+}
+#year{
+    border: 1.5px solid var(--input-border-year);
+}
+.day::before {
+
+    content: 'DAY';
+    display: block;
+    color: var(--input-border-day);
+    font-weight: 700;
+    background-color: transparent;
+}
+
+.day::after{
+    content: var(--erro-day);
+    display: block;
+    color: var(--input-border-day);
+    font-weight: 700;
+    background-color: transparent;
+}
+.month::before {
+
+    content: 'MONTH';
+    display: block;
+    color: var(--input-border-month);
+    font-weight: 700;
+    background-color: transparent;
+}
+.month::after{
+    content: var(--erro-month);
+    display: block;
+    color: var(--input-border-month);
+    font-weight: 700;
+    background-color: transparent;
+}
+.year::before {
+
+    content: 'YEAR';
+    display: block;
+    color: var(--input-border-year);
+    font-weight: 700;
+    background-color: transparent;
+}
+.year::after{
+    content: var(--erro-year);
+    display: block;
+    color: var(--input-border-year);
+    font-weight: 700;
+    background-color: transparent;
+}
+img{
+    aspect-ratio: 1/1;
+    width: clamp(40px,4vw,60px);
+    
+}
+.arrow{
+    background-color: rgb(156, 119, 231); 
+    height: fit-content;
+    padding: 5px;
+    border-radius: 100px;
+    cursor: pointer;
+    margin-left: 90%;
+    margin-top: -6%;
+    transition: all 0.3s;
+}
+@media all and ( max-width:600px ){
+    .arrow{
+        margin: 0 auto;
+        margin-top: -6%;
+    }
+    .card{
+        width: 300px;
+    }
+    .inputs{
+        justify-content: space-between;
+        gap: 0px;
+    }
+    input{
+        font-size: 11px;
+    }
+    
+}
+.arrow:hover{
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+span{
+    color: mediumpurple;
+    font-size: clamp(3rem,10vw,6rem);
+    font-weight: bolder;
+}
+h1{
+    font-size: clamp(3rem,10vw,6rem);
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
