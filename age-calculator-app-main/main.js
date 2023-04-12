@@ -95,4 +95,3 @@ function animate(y, m , d){
 function zeroAEsquerda(x){
     return x < 10? "0" + x : x;
 }
-
